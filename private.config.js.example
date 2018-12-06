@@ -1,0 +1,5 @@
+module.exports = {
+  apiPath: 'https://www.easy-mock.com/mock/5ab24b2f69c2923075ef5ed8/example', // api接口前缀
+  publicPath: './', // 静态资源前缀
+  prod: false // 是否为生产环境
+}
