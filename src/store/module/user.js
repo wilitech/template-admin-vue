@@ -7,7 +7,7 @@ import {
   removeReaded,
   restoreTrash,
   getUnreadCount
-} from '@/api/user'
+} from '@/api/admin'
 import commonApi from '@/api/common'
 import { setToken, getToken } from '@/libs/util'
 

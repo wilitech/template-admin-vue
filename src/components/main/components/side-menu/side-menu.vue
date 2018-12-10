@@ -3,13 +3,13 @@
     <slot></slot>
     <Menu ref="menu" v-show="!collapsed" :active-name="activeName" :open-names="openedNames" :accordion="accordion" :theme="theme" width="auto" @on-select="handleSelect">
       <template v-for="item in menuList" v-if="item.checked">
-        <side-menu-item v-if="item.isGroup" :key="`menu-${item.title}`" :parent-item="item">
+        <side-menu-item v-if="item.isGroup" :key="item.access" :parent-item="item">
           <template slot="title">
             <common-icon :type="item.icon || ''"/>
             <span>{{ item.title }}</span>
           </template>
         </side-menu-item>
-        <menu-item v-else :to="item.path" :name="item.access" :key="`menu-${item.title}`">
+        <menu-item v-else :to="item.path" :name="item.access" :key="item.access">
           <common-icon :type="item.icon || ''"/>
           <span>{{ item.title }}</span>
         </menu-item>

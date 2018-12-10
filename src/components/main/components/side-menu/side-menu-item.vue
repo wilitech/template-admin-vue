@@ -14,13 +14,13 @@
         <side-menu-item v-if="showChildren(item)" :key="`menu-${item.name}`" :parent-item="item"></side-menu-item>
         <menu-item v-else :name="getNameOrHref(item)" :key="`menu-${item.name}`"><common-icon :type="item.icon || ''"/><span>{{ showTitle(item) }}</span></menu-item>
       </template> -->
-      <side-menu-item v-if="item.isGroup" :key="`menu-${item.title}`" :parent-item="item">
+      <side-menu-item v-if="item.isGroup" :key="item.access" :parent-item="item">
         <template slot="title">
           <common-icon :type="parentItem.icon || ''"/>
           <span>{{ item.title }}</span>
         </template>
       </side-menu-item>
-      <menu-item v-else :to="item.path" :name="item.access" :key="`menu-${item.title}`">
+      <menu-item v-else :to="item.path" :name="item.access" :key="item.access">
         <common-icon :type="parentItem.icon || ''"/>
         <span>{{ item.title }}</span>
       </menu-item>

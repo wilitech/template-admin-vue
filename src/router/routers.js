@@ -33,38 +33,36 @@ export default [
     name: '_home',
     redirect: '/home',
     component: Main,
-    title: '首页2',
     children: [
-      { path: '/home', name: 'home', meta: { hideInMenu: true, title: '首页', notCache: true, icon: 'md-home' }, component: () => import('@/view/single-page/home') },
-      { path: '/users', name: 'users', meta: { title: '用户管理' }, component: () => import('@/view/excel/upload-excel.vue') }
+      { path: '/home', name: 'home', meta: { hideInMenu: true, title: '首页', notCache: true, icon: 'md-home' }, component: () => import('@/view/home') }
     ]
   },
   // 有层级菜单
   { path: '/sys',
     name: 'sys',
-    meta: { icon: 'ios-stats', title: '系统管理' },
+    meta: { title: '系统管理' },
     component: Main,
     children: [
-      { path: '/sys/roles', name: 'sys.roles', meta: { title: '角色管理' }, component: () => import('@/view/sys/roles.vue') },
-      { path: '/sys/admins', name: 'sys.admins', meta: { title: '管理员管理' }, component: () => import('@/view/excel/upload-excel.vue') },
+      { path: '/sys/roles', name: 'sys.roles', meta: { title: '角色管理' }, component: () => import('@/view/demo/sys/roles.vue') },
+      { path: '/sys/admins', name: 'sys.admins', meta: { title: '管理员管理' }, component: () => import('@/view/demo/excel/upload-excel.vue') },
       { path: '/sys/test',
         name: 'sys.test',
         meta: { title: '二级菜单' },
         component: parentView,
         children: [
-          { path: '/sys/test/1', name: 'sys.test.1', meta: { title: '三级菜单1' }, component: () => import('@/view/excel/upload-excel.vue') },
-          { path: '/sys/test/2', name: 'sys.test.2', meta: { title: '三级菜单2' }, component: () => import('@/view/excel/upload-excel.vue') }
+          { path: '/sys/test/1', name: 'sys.test.1', meta: { title: '三级菜单1' }, component: () => import('@/view/demo/excel/upload-excel.vue') },
+          { path: '/sys/test/2', name: 'sys.test.2', meta: { title: '三级菜单2' }, component: () => import('@/view/demo/excel/upload-excel.vue') }
         ]}
     ]
   },
-  // { path: '_users',
-  //   name: '_users',
-  //   meta: { icon: 'ios-stats', title: '用户管理' },
-  //   component: Main,
-  //   children: [
-  //     { path: '/users', name: 'users', meta: { title: '用户管理' }, component: () => import('@/view/excel/upload-excel.vue') }
-  //   ]
-  // },
+  { path: '/user',
+    name: 'user',
+    meta: { title: '用户管理' },
+    component: Main,
+    children: [
+      { path: '/user/users', name: 'user.users', meta: { title: '用户管理' }, component: () => import('@/view/user/users.vue') }
+    ]
+  },
   {
     path: '/401',
     name: 'error_401',

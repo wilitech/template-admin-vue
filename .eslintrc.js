@@ -13,7 +13,8 @@ module.exports = {
     'no-undef': 'off',
     'camelcase': 'off',
     'space-before-function-paren': 'off',
-    'no-unused-vars': 'off'
+    'no-unused-vars': 'off',
+    'object-property-newline': 'off'
   },
   parserOptions: {
     parser: 'babel-eslint'
